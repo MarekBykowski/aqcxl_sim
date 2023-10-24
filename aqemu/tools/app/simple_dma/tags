@@ -1,0 +1,57 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DEBFLAGS	Makefile	/^  DEBFLAGS = -O -g # "-O" is needed to expand inlines$/;"	m
+DEBFLAGS	Makefile	/^  DEBFLAGS = -O2$/;"	m
+DMA_APP	Makefile	/^DMA_APP  = dma-app$/;"	m
+EP_BAR0	dma-app.c	32;"	d	file:
+KERNELDIR	Makefile	/^KERNELDIR ?= \/lib\/modules\/$(shell uname -r)\/build$/;"	m
+MAX_SIMPLE_DEV	simple.c	245;"	d	file:
+PWD	Makefile	/^PWD       := $(shell pwd)$/;"	m
+SIMPLE_IOCTL_FREE	simple.h	/^	SIMPLE_IOCTL_FREE$/;"	e	enum:dma_cdev_ioctl_cmd
+SIMPLE_IOCTL_FREE	simple2.h	/^	SIMPLE_IOCTL_FREE$/;"	e	enum:dma_cdev_ioctl_cmd
+SIMPLE_IOCTL_PIN	simple.h	/^	SIMPLE_IOCTL_PIN,$/;"	e	enum:dma_cdev_ioctl_cmd
+SIMPLE_IOCTL_PIN	simple2.h	/^	SIMPLE_IOCTL_PIN,$/;"	e	enum:dma_cdev_ioctl_cmd
+SimpleDevs	simple.c	/^static struct cdev SimpleDevs[MAX_SIMPLE_DEV];$/;"	v	typeref:struct:cdev	file:
+buf	simple.h	/^	void __user *buf;$/;"	m	struct:dma_io_cb
+buf	simple2.h	/^	void *buf;$/;"	m	struct:dma_io_cb
+dma_cdev_ioctl_cmd	simple.h	/^enum dma_cdev_ioctl_cmd {$/;"	g
+dma_cdev_ioctl_cmd	simple2.h	/^enum dma_cdev_ioctl_cmd {$/;"	g
+dma_io_cb	simple.h	/^struct dma_io_cb {$/;"	s
+dma_io_cb	simple2.h	/^struct dma_io_cb {$/;"	s
+ep_mmap	dma-app.c	/^volatile int *ep_mmap = NULL; \/* global variable method*\/$/;"	v
+len	simple.h	/^	size_t len;$/;"	m	struct:dma_io_cb
+len	simple2.h	/^	size_t len;$/;"	m	struct:dma_io_cb
+main	dma-app.c	/^int main(int argc, char** argv) {$/;"	f
+map_ep	dma-app.c	/^int map_ep() {$/;"	f
+mem_fd	dma-app.c	/^int mem_fd;$/;"	v
+obj-m	Makefile	/^obj-m	:= simple.o$/;"	m
+pages	simple.h	/^	struct page **pages;$/;"	m	struct:dma_io_cb	typeref:struct:dma_io_cb::page
+pages	simple2.h	/^	struct page **pages;$/;"	m	struct:dma_io_cb	typeref:struct:dma_io_cb::page
+pages_nr	simple.h	/^	unsigned int pages_nr;$/;"	m	struct:dma_io_cb
+pages_nr	simple2.h	/^	unsigned int pages_nr;$/;"	m	struct:dma_io_cb
+phys_addr	simple.h	/^	unsigned long phys_addr;$/;"	m	struct:dma_io_cb
+phys_addr	simple2.h	/^	unsigned long phys_addr;$/;"	m	struct:dma_io_cb
+pinned	simple.h	/^	int pinned;$/;"	m	struct:dma_io_cb
+pinned	simple2.h	/^	int pinned;$/;"	m	struct:dma_io_cb
+simple_class	simple.c	/^static struct class *simple_class = NULL;$/;"	v	typeref:struct:class	file:
+simple_cleanup	simple.c	/^module_exit(simple_cleanup);$/;"	v
+simple_cleanup	simple.c	/^static void simple_cleanup(void)$/;"	f	file:
+simple_fd	dma-app.c	/^int simple_fd;$/;"	v
+simple_init	simple.c	/^module_init(simple_init);$/;"	v
+simple_init	simple.c	/^static int simple_init(void)$/;"	f	file:
+simple_ioctl	simple.c	/^static long simple_ioctl(struct file *file, unsigned int cmd,$/;"	f	file:
+simple_major	simple.c	/^static int simple_major = 0;$/;"	v	file:
+simple_nopage_mmap	simple.c	/^static int simple_nopage_mmap(struct file *filp, struct vm_area_struct *vma)$/;"	f	file:
+simple_nopage_ops	simple.c	/^static struct file_operations simple_nopage_ops = {$/;"	v	typeref:struct:file_operations	file:
+simple_nopage_vm_ops	simple.c	/^static struct vm_operations_struct simple_nopage_vm_ops = {$/;"	v	typeref:struct:vm_operations_struct	file:
+simple_release	simple.c	/^static int simple_release(struct inode *inode, struct file *filp)$/;"	f	file:
+simple_remap_mmap	simple.c	/^static int simple_remap_mmap(struct file *filp, struct vm_area_struct *vma)$/;"	f	file:
+simple_remap_ops	simple.c	/^static struct file_operations simple_remap_ops = {$/;"	v	typeref:struct:file_operations	file:
+simple_remap_vm_ops	simple.c	/^static struct vm_operations_struct simple_remap_vm_ops = {$/;"	v	typeref:struct:vm_operations_struct	file:
+simple_setup_cdev	simple.c	/^static void simple_setup_cdev(struct cdev *dev, int minor,$/;"	f	file:
+simple_vma_close	simple.c	/^void simple_vma_close(struct vm_area_struct *vma)$/;"	f
+simple_vma_open	simple.c	/^void simple_vma_open(struct vm_area_struct *vma)$/;"	f

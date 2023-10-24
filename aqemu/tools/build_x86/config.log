@@ -1,0 +1,287 @@
+# QEMU configure log Wed Mar  1 03:29:38 UTC 2023
+# Configured with: '../configure' '--target-list=x86_64-softmmu' '--disable-sdl' '--audio-drv-list=oss' '--disable-curl' '--disable-libssh' '--disable-xkbcommon' '--disable-gtk' '--disable-opengl' '--disable-libiscsi' '--disable-libudev' '--disable-libusb' '--disable-vnc-sasl' '--disable-selinux' '--enable-debug'
+#
+
+funcs: do_compiler_werror do_cc compile_object check_define main
+lines: 159 195 436 453 0
+cc -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -c -o config-temp/qemu-conf.o config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_cc compile_object check_define main
+lines: 159 195 436 546 0
+cc -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -c -o config-temp/qemu-conf.o config-temp/qemu-conf.c
+config-temp/qemu-conf.c:2:2: error: #error __i386__ not defined
+ #error __i386__ not defined
+  ^~~~~
+
+funcs: do_compiler_werror do_cc compile_object check_define main
+lines: 159 195 436 548 0
+cc -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -c -o config-temp/qemu-conf.o config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_cc compile_object check_define main
+lines: 159 195 436 549 0
+cc -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -c -o config-temp/qemu-conf.o config-temp/qemu-conf.c
+config-temp/qemu-conf.c:2:2: error: #error __ILP32__ not defined
+ #error __ILP32__ not defined
+  ^~~~~
+
+funcs: do_compiler_werror do_cc compile_object main
+lines: 159 195 1180 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -c -o config-temp/qemu-conf.o config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_cc compile_prog main
+lines: 159 201 1185 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_cc compile_prog main
+lines: 159 201 1229 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+cc -Werror -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Werror -Wold-style-declaration -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wold-style-declaration -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Werror -Wold-style-definition -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wold-style-definition -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Werror -Wtype-limits -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wtype-limits -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Werror -Wformat-security -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wformat-security -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Werror -Wformat-y2k -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wformat-y2k -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Werror -Winit-self -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Winit-self -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Werror -Wignored-qualifiers -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wignored-qualifiers -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Werror -Wempty-body -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wempty-body -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Werror -Wnested-externs -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wnested-externs -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Werror -Wendif-labels -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wendif-labels -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Werror -Wexpansion-to-defined -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wexpansion-to-defined -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Werror -Wimplicit-fallthrough=2 -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wimplicit-fallthrough=2 -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Werror -Winitializer-overrides -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+cc: error: unrecognized command line option ‘-Winitializer-overrides’; did you mean ‘-Wno-suggest-override’?
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Winitializer-overrides -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: unrecognized command line option ‘-Winitializer-overrides’; did you mean ‘-Wno-suggest-override’?
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Werror -Wmissing-include-dirs -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wmissing-include-dirs -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Werror -Wshift-negative-value -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wshift-negative-value -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Werror -Wstring-plus-int -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+cc: error: unrecognized command line option ‘-Wstring-plus-int’; did you mean ‘-Wstrict-aliasing’?
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wstring-plus-int -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: unrecognized command line option ‘-Wstring-plus-int’; did you mean ‘-Wstrict-aliasing’?
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Werror -Wtypedef-redefinition -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+cc: error: unrecognized command line option ‘-Wtypedef-redefinition’; did you mean ‘-Wold-style-definition’?
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wtypedef-redefinition -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: unrecognized command line option ‘-Wtypedef-redefinition’; did you mean ‘-Wold-style-definition’?
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Werror -Wtautological-type-limit-compare -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+cc: error: unrecognized command line option ‘-Wtautological-type-limit-compare’; did you mean ‘-Wtautological-compare’?
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wtautological-type-limit-compare -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: unrecognized command line option ‘-Wtautological-type-limit-compare’; did you mean ‘-Wtautological-compare’?
+
+funcs: do_compiler_werror do_cc compile_prog cc_has_warning_flag main
+lines: 159 201 1271 1289 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Werror -Wpsabi -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_objc objcc_has_warning_flag main
+lines: 167 1283 1292 0
+cc -m64 -mcx16 -Werror -Wpsabi -o config-temp/qemu-conf.exe config-temp/qemu-conf.m
+cc: error: config-temp/qemu-conf.m: Objective-C compiler not installed on this system
+
+funcs: do_compiler_werror do_cc compile_object main
+lines: 159 195 1313 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -Werror -fstack-protector-strong -c -o config-temp/qemu-conf.o config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_cc compile_prog main
+lines: 159 201 1314 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -Werror -fstack-protector-strong -o config-temp/qemu-conf.exe config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_cc compile_object main
+lines: 159 195 1335 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -Werror -c -o config-temp/qemu-conf.o config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_cc compile_prog main
+lines: 159 201 1386 0
+cc -m64 -mcx16 -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -Werror -fPIE -DPIE -o config-temp/qemu-conf.exe config-temp/qemu-conf.c -fstack-protector-strong -pie
+
+funcs: do_compiler_werror do_cc compile_prog main
+lines: 159 201 1399 0
+cc -m64 -mcx16 -fPIE -DPIE -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -o config-temp/qemu-conf.exe config-temp/qemu-conf.c -pie -fstack-protector-strong -Wl,-z,relro -Wl,-z,now
+cc -Werror -m64 -mcx16 -fPIE -DPIE -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -o config-temp/qemu-conf.exe config-temp/qemu-conf.c -pie -fstack-protector-strong -Wl,-z,relro -Wl,-z,now
+
+funcs: do_compiler_werror do_cc compile_prog main
+lines: 159 201 1492 0
+cc -m64 -mcx16 -fPIE -DPIE -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -o config-temp/qemu-conf.exe config-temp/qemu-conf.c -pie -Wl,-z,relro -Wl,-z,now -fstack-protector-strong
+cc -Werror -m64 -mcx16 -fPIE -DPIE -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -o config-temp/qemu-conf.exe config-temp/qemu-conf.c -pie -Wl,-z,relro -Wl,-z,now -fstack-protector-strong
+
+funcs: do_compiler_werror do_cc compile_prog main
+lines: 159 201 1564 0
+cc -m64 -mcx16 -fPIE -DPIE -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -o config-temp/qemu-conf.exe config-temp/qemu-conf.c -pie -Wl,-z,relro -Wl,-z,now -fstack-protector-strong -pthread -lgmodule-2.0 -lglib-2.0
+cc -Werror -m64 -mcx16 -fPIE -DPIE -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -o config-temp/qemu-conf.exe config-temp/qemu-conf.c -pie -Wl,-z,relro -Wl,-z,now -fstack-protector-strong -pthread -lgmodule-2.0 -lglib-2.0
+
+funcs: do_compiler_werror do_cc compile_prog main
+lines: 159 201 1584 0
+cc -m64 -mcx16 -fPIE -DPIE -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -pthread -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -Werror -o config-temp/qemu-conf.exe config-temp/qemu-conf.c -pie -Wl,-z,relro -Wl,-z,now -fstack-protector-strong -pthread -lgmodule-2.0 -lglib-2.0
+
+funcs: do_compiler_werror do_cc compile_prog main
+lines: 159 201 1617 0
+cc -m64 -mcx16 -fPIE -DPIE -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -o config-temp/qemu-conf.exe config-temp/qemu-conf.c -pie -Wl,-z,relro -Wl,-z,now -fstack-protector-strong
+cc -Werror -m64 -mcx16 -fPIE -DPIE -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -o config-temp/qemu-conf.exe config-temp/qemu-conf.c -pie -Wl,-z,relro -Wl,-z,now -fstack-protector-strong
+
+funcs: do_compiler_werror do_cc compile_prog main
+lines: 159 201 1707 0
+cc -m64 -mcx16 -fPIE -DPIE -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -Werror -o config-temp/qemu-conf.exe config-temp/qemu-conf.c -pie -Wl,-z,relro -Wl,-z,now -fstack-protector-strong
+
+funcs: do_compiler_werror do_cc compile_object main
+lines: 159 195 1742 0
+cc -m64 -mcx16 -fPIE -DPIE -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -Werror -c -o config-temp/qemu-conf.o config-temp/qemu-conf.c
+
+funcs: do_compiler probe_target_compiler main
+lines: 2152 2331 0
+cc -m32 -o config-temp/qemu-conf.o -c config-temp/qemu-conf.c
+
+funcs: do_compiler probe_target_compiler main
+lines: 2153 2331 0
+cc -m32 -r -nostdlib -o config-temp/qemu-conf2.o config-temp/qemu-conf.o -lgcc
+
+funcs: do_compiler_werror do_cc compile_object main
+lines: 159 195 2397 0
+cc -m64 -mcx16 -fPIE -DPIE -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -c -o config-temp/qemu-conf.o config-temp/qemu-conf.c
+cc -Werror -m64 -mcx16 -fPIE -DPIE -std=gnu11 -Wall -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wstrict-prototypes -Wredundant-decls -Wundef -Wwrite-strings -Wmissing-prototypes -fno-strict-aliasing -fno-common -fwrapv -Wold-style-declaration -Wold-style-definition -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wnested-externs -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -c -o config-temp/qemu-conf.o config-temp/qemu-conf.c
+
+funcs: do_compiler_werror do_cxx main
+lines: 163 2408 0
+c++ -m64 -mcx16 -fPIE -DPIE -std=gnu++11 -Wall -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wundef -Wwrite-strings -fno-strict-aliasing -fno-common -fwrapv -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -o config-temp/qemu-conf.exe config-temp/qemu-conf.cxx config-temp/qemu-conf.o -Wl,--warn-common -Wl,-z,relro -Wl,-z,now -fstack-protector-strong
+c++ -Werror -m64 -mcx16 -fPIE -DPIE -std=gnu++11 -Wall -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -Wundef -Wwrite-strings -fno-strict-aliasing -fno-common -fwrapv -Wtype-limits -Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers -Wempty-body -Wendif-labels -Wexpansion-to-defined -Wimplicit-fallthrough=2 -Wno-missing-include-dirs -Wno-shift-negative-value -Wno-psabi -fstack-protector-strong -o config-temp/qemu-conf.exe config-temp/qemu-conf.cxx config-temp/qemu-conf.o -Wl,--warn-common -Wl,-z,relro -Wl,-z,now -fstack-protector-strong
+
+funcs: do_compiler probe_target_compiler main
+lines: 2152 2596 0
+cc -m64 -o config-temp/qemu-conf.o -c config-temp/qemu-conf.c
+
+funcs: do_compiler probe_target_compiler main
+lines: 2153 2596 0
+cc -m64 -r -nostdlib -o config-temp/qemu-conf2.o config-temp/qemu-conf.o -lgcc

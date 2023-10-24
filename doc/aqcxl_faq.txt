@@ -1,0 +1,20 @@
+================================== AQCXL FAQ ===================================
+a. How to download software to the home directory and compile it to run against
+ the avery cxl?
+- User can scp software applications into QEMU guest OS from the port listed in
+  Question b), `scp -P<port number> <username>@localhost`.
+
+b. I tried running using the instructions in the README file. For the ssh port,
+   I don’t see any message with “SSH…” in it. Could you please help to let me
+   know how to determine the port for using ssh -pxx qemu@localhost?
+- The line displaying the ssh port is not displayed in the log file, right after
+  running the `run_qemu.pl -cxl1.1 -dbg -qc ~/qcow/$USER.img`
+  "run_qemu.pl: SSH port is set to 2222" should be displayed as the line after.
+
+c. Do I have to delete the content of run directory for every new run or the
+   script handles the cleaning?
+- For each run, the script overwrites the files generated under your current
+  run directory.
+
+d. How do I change the password for the account?
+- Using the passwd command from Linux will be enough.

@@ -1,0 +1,6 @@
+To compile: make
+
+To run: (root requried)
+1. insmod ./simple.ko
+2. ./dma-app.exe
+

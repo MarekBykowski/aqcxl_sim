@@ -1,0 +1,10 @@
+# AUTOMATICALLY GENERATED, DO NOT MODIFY
+
+qmp_enter_readmem(const char *json) "%s"
+qmp_exit_readmem(const char *result, bool succeeded) "%s %d"
+qmp_enter_writemem(const char *json) "%s"
+qmp_exit_writemem(const char *result, bool succeeded) "%s %d"
+qmp_enter_triggerevent(const char *json) "%s"
+qmp_exit_triggerevent(const char *result, bool succeeded) "%s %d"
+qmp_enter_injectgpio(const char *json) "%s"
+qmp_exit_injectgpio(const char *result, bool succeeded) "%s %d"

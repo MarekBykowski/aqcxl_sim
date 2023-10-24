@@ -1,0 +1,26 @@
+Written Offer for Source Code
+
+For third party technology that you receive from Avery in binary form which is licensed under an open source license that gives you the right to receive the source code for that binary, you can obtain a copy of the applicable source code by submitting a written request to:
+
+Avery Design Systems, Inc.
+
+Attn: Research and Development Legal
+
+1565 Main St #207, Tewksbury, MA 01876, USA
+
+Your request should include:
+The name of the component or binary file(s) for which you are requesting the source code
+
+The name and version number of the Avery product containing the binary
+
+The date you received the Avery product
+
+Your name
+
+Your company name (if applicable)
+
+Your return mailing address and email
+
+A telephone number in the event we need to reach you.
+
+We may charge you a fee allowed by the open source license. An quote will be provided to you for the fee. Your request must be sent within three years of the date you received the Avery product that included the component or binary file(s) that are the subject of your request.

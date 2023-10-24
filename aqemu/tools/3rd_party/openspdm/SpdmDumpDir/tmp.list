@@ -1,0 +1,13 @@
+./Build/RELEASE_GCC/X64/OsStub/BaseMemoryLib/BaseMemoryLib.a
+./Build/RELEASE_GCC/X64/OsStub/DebugLibNull/DebugLibNull.a
+./Build/RELEASE_GCC/X64/OsStub/BaseCryptLibOpenssl/BaseCryptLibOpenssl.a
+./Build/RELEASE_GCC/X64/OsStub/OpensslLib/OpensslLib.a
+./Build/RELEASE_GCC/X64/OsStub/RngLib/RngLib.a
+./Build/RELEASE_GCC/X64/OsStub/MemoryAllocationLib/MemoryAllocationLib.a
+./Build/RELEASE_GCC/X64/Library/SpdmCommonLib/SpdmCommonLib.a
+./Build/RELEASE_GCC/X64/Library/SpdmCryptLib/SpdmCryptLib.a
+./Build/RELEASE_GCC/X64/Library/SpdmSecuredMessageLib/SpdmSecuredMessageLib.a
+./Build/RELEASE_GCC/X64/Library/SpdmTransportMctpLib/SpdmTransportMctpLib.a
+./Build/RELEASE_GCC/X64/Library/SpdmTransportPciDoeLib/SpdmTransportPciDoeLib.a
+./Build/RELEASE_GCC/X64/OsStub/SpdmDeviceSecretLibNull/SpdmDeviceSecretLibNull.a
+./Build/RELEASE_GCC/X64/SpdmDumpDir/SpdmDump.a

@@ -1,0 +1,7 @@
+Quick start:
+  1. login to QEMU
+  2. Scp the prebuilt Openspdm package to QEMU
+     $ scp -r <local account>:<path to aqcxl_sim-*version*>/aqemu/tools/3rd_party/openspdm/ .
+  3. In QEMU, change directory to Openspdm and run the SPDM requester
+     $ cd openspdm/
+     $ sudo ./SpdmRequesterEmu --trans PCI_DOE -s 35:00.0
