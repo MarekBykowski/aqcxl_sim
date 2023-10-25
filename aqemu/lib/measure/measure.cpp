@@ -19,6 +19,7 @@ void print_time_difference(clock_t diff) {
     printf("Time difference: %.2f ms\n", milliseconds);
 }
 
+/* mb: definition of the avy_wallclock_diff */
 extern "C" void avy_wallclock_diff(const char* key, char init) {
     int i;
     clock_t current_time = clock();

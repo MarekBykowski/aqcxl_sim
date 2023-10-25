@@ -168,7 +168,11 @@ class mytest extends apci_testcase_base;
 `endif
 
         fork
-            while (!sc_abort) qemu_wait_sc_cmd(sc_abort, rc, all_bfms);
+            while (!sc_abort) begin
+                avy_wallclock_diff("traffic", 1);
+                qemu_wait_sc_cmd(sc_abort, rc, all_bfms);
+                avy_wallclock_diff("traffic" , 0);
+            end
             forever @(posedge PERST_N or negedge PERST_N) $display("AEMU_INFO: PERST_N edge triggered 'h%x->h%x", !PERST_N, PERST_N);
             forever @(posedge RST_SG or negedge RST_SG) $display("AEMU_INFO: RESET SIGNAL edge triggered 'h%x->h%x", !RST_SG, RST_SG);
             forever @(negedge RST_SG) begin
