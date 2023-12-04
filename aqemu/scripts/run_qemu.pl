@@ -1099,7 +1099,7 @@ sub run_qemu {
 			$exec_cmd .= " -drive if=none,file=$opt_rootfs,id=hd0,format=raw";
 			$exec_cmd .= " -device virtio-blk-pci,drive=hd0";
 			#$exec_cmd .= " -append \"root=/dev/vda selinux=0 audit=0 ignore_loglevel rw nokaslr bootconfig console=tty0 console=ttyS0 intel_iommu=on\"";
-                        $exec_cmd .= " -append \"root=/dev/vda rw ip=dhcp selinux=0 audit=0 rw nokaslr bootconfig console=tty0 console=ttyS0 intel_iommu=on nokaslr bootconfig\"";
+                        $exec_cmd .= " -append \"root=/dev/vda rw ip=dhcp selinux=0 audit=0 ignore_loglevel rw nokaslr bootconfig console=tty0 console=ttyS0 intel_iommu=on\"";
 		} else {
 			die ("$prog: mb: you are using opt_cxl_qemu. Please check if you have specified kernel, ramdisk, disk image or rootfs!");
 		}
