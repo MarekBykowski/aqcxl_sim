@@ -25,12 +25,15 @@ my $opt_n;
 my $opt_bfm= 0;
 my $opt_pci= 0;
 my $opt_nvme=0;
-my $opt_cxl= 0;
+my $opt_cxl= 1; #mb: change to true
 my $opt_axi= 0;
 my $opt_enet= 0;
 my $opt_cxl_1_1= 0;
 my $opt_pass= 0;
 my $opt_ats= 0;
+
+# mb: add option for building from cxl_run_qemu images
+my $opt_cxl_qemu = 0;
 
 my $opt_uimg= 0;
 my $opt_qc;
@@ -38,6 +41,7 @@ my $opt_cimg;
 my $opt_dimg;
 my $opt_kernel;
 my $opt_rd;
+my $opt_rootfs;
 my $opt_mroot;
 my $opt_dtb;
 my $opt_elf;
@@ -105,6 +109,7 @@ my $opt_perf = 0;
 
 # for process control
 my %PID;
+my @pids;
 my $pid_prog= $$;
 
 my $start_run = time();
@@ -152,6 +157,7 @@ sub set_qemu_env {
         $qemu_type= "x86_64-softmmu";
         if ($is_release_version) {
             $build_dir= $AVERY_QEMU."/tools/build_x86";
+            print("mb: build_dir:qemu_type $build_dir:$qemu_type\n");
         } else {
             if ($opt_cxl) {
                 $QEMU_DIR= $AVERY_AVP."/tools/qemu-cxl";
@@ -169,7 +175,9 @@ sub set_qemu_env {
         }
         $QEMU_MACH= $build_dir."/$qemu_type/qemu-system-x86_64";
         if (not defined($opt_cimg)) {
-            &check_qcow;
+		if (! $opt_cxl_qemu) {
+			&check_qcow;
+		}
         }
     } elsif ($opt_arch eq MICROB) {
         if ($is_release_version) {
@@ -190,6 +198,8 @@ sub set_qemu_env {
         $qemu_type= "aarch64-softmmu";
         $QEMU_MACH= $build_dir."/$qemu_type/qemu-system-aarch64";
     }
+
+    print("mb: build_dir:qemu_type $build_dir:$qemu_type\n");
 
     if (!$is_release_version) {
         &check_qemu_machine($build_dir, $qemu_type);
@@ -223,6 +233,7 @@ sub set_sc_env {
     }
     # if both opt_cxl and opt_pci is used, use avy_cxl_sc.exe
     if ($opt_cxl) {
+        print ("mb: opt_cxl $opt_cxl\n");
         $SC_PROG_NAME= "bin/avy_cxl_sc.exe";
     } elsif ($opt_axi) {
         $SC_PROG_NAME= "bin/avy_axi_sc.exe";
@@ -576,6 +587,9 @@ sub parse_arg {
 
         if ($arg eq "-h") {
             &show_usage;
+	} elsif ($arg eq "-cxl_qemu") {
+	    $opt_cxl_qemu = 1;
+	    print("mb: opt_cxl_qemu $opt_cxl_qemu\n");
         } elsif ($arg eq "-p") {
             # deprecated, use dut
             if (not defined($val)) {
@@ -674,6 +688,12 @@ sub parse_arg {
                 die ("$prog: $arg: Must specify ramdisk path\n");
             }
             $opt_rd= $val;
+            $i++
+        } elsif ($arg eq "-rootfs") {
+            if (not defined($val)) {
+                die ("$prog: $arg: Must specify rootfs path\n");
+            }
+            $opt_rootfs= $val;
             $i++
         } elsif ($arg eq "-mroot") {
             if (not defined($val)) {
@@ -872,6 +892,7 @@ sub run_sc {
     chdir $cur_dir;
 
     $sc_prog= "$SC_PROJ_DIR/$SC_PROG_NAME";
+    print("mb: sc_prog $sc_prog\n");
 
     $exec_opt.= " unix:$tmp_qemu_dir";
     if ($opt_arch eq X86){
@@ -1011,11 +1032,11 @@ sub run_qemu {
 
         #$exec_cmd.= " -machine type=pc-q35-4.0,hmat=on";
         $exec_cmd.= " -machine type=pc-q35-4.0";
-        
+
         if ($opt_cxl) {
             $exec_cmd.= ",nvdimm=on,cxl=on";
         }
-        
+
         if ($opt_kvm) {
             $exec_cmd.= ",accel=kvm";
             #### Enable KVM ####
@@ -1062,6 +1083,26 @@ sub run_qemu {
             } else {
                 die ("$prog: Please check if you have specified kernel, ramdisk and disk image!");
             }
+	} elsif ($opt_cxl_qemu) {
+		if($opt_qc) {
+			print("You are using cxl_qemu image, -qc option is invalid now\n");
+		}
+		if($opt_dimg && $opt_kernel && $opt_rd) {
+			$exec_cmd .= " -drive file=$opt_dimg,format=raw,media=disk";
+			$exec_cmd .= " -kernel $opt_kernel";
+			$exec_cmd .= " -initrd $opt_rd";
+			$exec_cmd .= " -append \"selinux=0 audit=0 root=/dev/sda2 ignore_loglevel rw nokaslr bootconfig console=tty0 console=ttyS0 intel_iommu=on\"";
+		} elsif (!$opt_dimg && $opt_kernel && $opt_rd && $opt_rootfs) {
+			$exec_cmd .= " -kernel $opt_kernel";
+			$exec_cmd .= " -initrd $opt_rd";
+			#$exec_cmd .= " -drive if=none,file=/home/mbykowsx/yocto/poky/cxl/tmp/deploy/images/qemux86-64/core-image-sato-qemux86-64-20230918145843.rootfs.ext4,id=hd0,format=raw";
+			$exec_cmd .= " -drive if=none,file=$opt_rootfs,id=hd0,format=raw";
+			$exec_cmd .= " -device virtio-blk-pci,drive=hd0";
+			#$exec_cmd .= " -append \"root=/dev/vda selinux=0 audit=0 ignore_loglevel rw nokaslr bootconfig console=tty0 console=ttyS0 intel_iommu=on\"";
+                        $exec_cmd .= " -append \"root=/dev/vda rw ip=dhcp selinux=0 audit=0 ignore_loglevel rw nokaslr bootconfig console=tty0 console=ttyS0 intel_iommu=on\"";
+		} else {
+			die ("$prog: mb: you are using opt_cxl_qemu. Please check if you have specified kernel, ramdisk, disk image or rootfs!");
+		}
         } else {
             if($opt_kernel || $opt_rd) {
                 if($opt_kernel && $opt_rd) {
@@ -1070,7 +1111,7 @@ sub run_qemu {
                     if ($opt_mroot) {
                         $exec_cmd .= " -append \"root=$opt_mroot\"";
                     } else {
-                        $exec_cmd .= " -append \"root=/dev/mapper/ubuntu--vg-ubuntu--lv\"";
+                        $exec_cmd .= " -append \"root=/dev/mapper/ubuntu--vg-ubuntu--lv selinux=0 audit=0 ignore_loglevel rw nokaslr bootconfig console=tty0 console=ttyS0 intel_iommu=on\"";
                     }
                 } else {
                     die ("$prog: Please check if you have specified kernel, ramdisk and mount directory!");
@@ -1191,6 +1232,8 @@ sub run_qemu {
                 # Run the following option with GRUB "console=ttyS0 console=ttyS1"
                 $exec_cmd.= " -nographic";
             }
+            $exec_cmd.= " -echr 20";
+
             #$exec_cmd.= " -object memory-backend-ram,id=mem0,size=2048M";
             #$exec_cmd.= " -numa node,nodeid=0,memdev=mem0,";
             #$exec_cmd.= " -numa cpu,node-id=0,socket-id=0";
@@ -1298,7 +1341,8 @@ sub run_qemu {
     print $fh "$exec_cmd\n\n";
     close $fh;
 
-    print ("$exec_cmd\n");
+    print ("mb: $exec_cmd\n");
+    my @exec_cmd_split = split(/\s+/, $exec_cmd);
 
     if($opt_n) {
         exit 0;
@@ -1396,10 +1440,22 @@ sub fork_proc {
         $PID{$pname}= fork();
         if (!$PID{$pname}) {
             # child proc
-            #setpgrp(0, 0);
+	    #setpgrp(0, 0);
             &$func(@args);
+	    #push @pids, $PID{$pname}; #parent stores children's pids
         }
+	print ("mb: parent $prog spawned process $pname with $PID{$pname}\n");
     }
+}
+
+sub pids {
+	my ($pid) = @_;
+	my @r= `pgrep -P $pid`;
+	chomp(@r);
+	foreach (@r) {
+		push @pids, $_;
+		pids($_);
+	}
 }
 
 sub proc_ctrl {
@@ -1413,6 +1469,9 @@ sub proc_ctrl {
     &fork_proc("regr", ($opt_regr), \&run_regression,);
     &fork_proc("qemu", 1, \&run_qemu,);
 
+    pids($$);
+    print ("mb: pids for all the processes: @pids\n");
+
     # wait for all child process
     $rid = waitpid (-1, 0);
     &kill_all_proc($rid);
@@ -1420,6 +1479,8 @@ sub proc_ctrl {
 
 sub kill_all_proc {
     my ($rid)= @_;
+
+    print ("mb: running the INT handler\n");
 
     foreach my $p (keys %PID) {
         if ($rid eq $PID{$p}) {
@@ -1450,6 +1511,9 @@ sub main {
     open (STDOUT, "|-", "tee", "$cur_dir/$run_log");
 
     &set_env;
+
+    print ("mb: is_release_version $is_release_version\n");
+
     if(!$is_release_version) {
         &set_dpi_env;
         while (! -e "$DPI_DIR/$DPI_PROG_NAME"){};
