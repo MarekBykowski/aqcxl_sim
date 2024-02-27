@@ -71,7 +71,7 @@ $prog [-t test] [options]
        -sriov                   enable SR-IOV feature
        -gen6                    add in PCIe gen6 file/defines
        -p pcie|nvme|cxl(2.0|1.1) run EP as Avery PCIe(default), NVME or CXL
-                                 *Only for cxl* 
+                                 *Only for cxl*
                                  ex: 1 endpoint per root decoder, 2 decoders
                                   -p cxl2.0,nEP=1,nDecoder=2
                                      2 endpoint per root decoder, 1 decoder
@@ -103,7 +103,7 @@ $prog [-t test] [options]
        -sriov                    enable SR-IOV feature.
        -gen6                    add in PCIe gen6 file/defines
        -p pcie|nvme|cxl(2.0|1.1) run EP as Avery PCIe(default), NVME or CXL
-                                 *Only for cxl* 
+                                 *Only for cxl*
                                  ex: 1 endpoint per root decoder, 2 decoders
                                   -p cxl2.0,nEP=1,nDecoder=2
                                      2 endpoint per root decoder, 1 decoder
@@ -258,6 +258,8 @@ sub vcs_execute {
         $pli .= " $AVERY_QEMU/dpi/measure/libmeasure64.so";
         $pli_sim .= " -sv_lib $AVERY_QEMU/dpi/measure/libmeasure64";
     } else {
+        # mb: shows how to add c/c++ definition to SV
+        print "mb: ", "$pli", "\n";
         $pli .= " $AVERY_QEMU/../aqemu/lib/libmeasure64.so";
         $pli_sim .= " -sv_lib $AVERY_QEMU/../aqemu/lib/libmeasure64";
     }

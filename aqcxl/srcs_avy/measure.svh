@@ -87,6 +87,7 @@ function avy_measure_end(input string pkt_header);
 `endif
 endfunction
 
+/* mb: shows how to import DPI into SystemVerilog */
 import "DPI-C" function void avy_wallclock_diff(input string key, input byte init);
 
 

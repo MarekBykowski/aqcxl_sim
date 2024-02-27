@@ -265,7 +265,11 @@ class mytest extends apci_testcase_base;
 `endif
 
         fork
-            while (!sc_abort) qemu_wait_sc_cmd(sc_abort, rc, all_bfms);
+            while (!sc_abort) begin
+                avy_wallclock_diff("traffic", 1);
+                qemu_wait_sc_cmd(sc_abort, rc, all_bfms);
+                avy_wallclock_diff("traffic" , 0);
+            end
 `ifdef INTEL_IOSF
             forever test_dut(rc);
 `endif
